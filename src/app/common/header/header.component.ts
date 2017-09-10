@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -6,17 +7,19 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
+
     codsys:String;
-    constructor() {
+
+    constructor(private router: Router) {
         this.codsys = sessionStorage.getItem('codsys');
-     }
+    }
 
     ngOnInit() {
     }
 
     salir(){
         sessionStorage.removeItem('codsys');
-        
+        this.router.navigate(['/']);
     }
 
 }

@@ -2,18 +2,18 @@
   <nav class="navbar navbar-light bg-primary">
     <h1 class="navbar-brand brand">Inscripciones Laboratorios Electrica</h1>
     <ul class="list-inline">
-    <li class="nav-item list-inline-item">
+      <li class="nav-item list-inline-item">
         <div>
-            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-            <a>{{codsys}}</a>
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <a>{{codsys}}</a>
         </div>
-    </li>
-    <li class="nav-item list-inline-item">
-        <div>
-            <i class="fa fa-sign-out" aria-hidden="true"></i>
-            <a>Salir</a>
+      </li>
+      <li class="nav-item list-inline-item">
+        <div id="signout">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <a (click)="salir()">Salir</a>
         </div>
-    </li>
+      </li>
     </ul>
   </nav>
 </header>
