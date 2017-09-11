@@ -19,7 +19,8 @@ export class HeaderComponent implements OnInit {
 
     salir(){
         sessionStorage.removeItem('codsys');
-        this.router.navigate(['/']);
+        window.location.pathname = "/";
+        //this.router.navigate(['/']);
     }
 
 }

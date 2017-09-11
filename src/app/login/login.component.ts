@@ -55,7 +55,8 @@ export class LoginComponent implements OnInit {
                 if (!(data.length == 0)) {
                     //this.openModal('Ingresando');
                     sessionStorage.setItem('codsys', this.codsys);
-                    this.router.navigate(['/subjects']);
+                    window.location.pathname = "/subjects";
+                    //this.router.navigate(['/subjects']);
                 }
                 else {this.openModal('Su CodSys es incorrecto');}
             }
