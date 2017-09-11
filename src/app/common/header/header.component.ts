@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-
-    codsys:String;
+    codsys:any;
 
     constructor(private router: Router) {
         this.codsys = sessionStorage.getItem('codsys');
@@ -19,8 +18,8 @@ export class HeaderComponent implements OnInit {
 
     salir(){
         sessionStorage.removeItem('codsys');
-        window.location.pathname = "/";
-        //this.router.navigate(['/']);
+        this.codsys = null;
+        this.router.navigate(['/']);
     }
 
 }

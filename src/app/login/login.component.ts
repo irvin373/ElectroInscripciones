@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { ModalComponent } from '../modal/modal.component';
+import { HeaderComponent } from '../common/header/header.component';
 
 @Component({
     selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
                 private db: AngularFireDatabase,
                 private modalService: NgbModal) { 
         this.codsys = sessionStorage.getItem('codsys');
+        
     }
 
     ngOnInit() {
@@ -53,7 +55,6 @@ export class LoginComponent implements OnInit {
         this.isAllowed$.subscribe(
             (data) => {
                 if (!(data.length == 0)) {
-                    //this.openModal('Ingresando');
                     sessionStorage.setItem('codsys', this.codsys);
                     window.location.pathname = "/subjects";
                     //this.router.navigate(['/subjects']);
