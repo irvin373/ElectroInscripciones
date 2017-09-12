@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { ModalComponent } from './modal/modal.component';
 import { FormsModule }   from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const environment = {
     production: false,
@@ -46,17 +47,18 @@ export const environment = {
         ListSubjectsComponent,
         SubjectComponent,
         ModalComponent,
-        LoginComponent
+        LoginComponent,
+        NotFoundComponent
     ],
     entryComponents: [ModalComponent],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         AngularFireDatabaseModule,
         AngularFireModule.initializeApp(environment.firebase),
         NgbModule.forRoot(),
         FormsModule,
-        CustomFormsModule
+        CustomFormsModule,
+        AppRoutingModule
     ],
     exports: [NgbModule],
     providers: [],
